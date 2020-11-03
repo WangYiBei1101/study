@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+
+{
+	int i,j,count,max=0;
+	printf("请输入需要计算的两个数：");
+	scanf("%d%d",&i,&j);
+	if(i>j)
+	{
+		int x;
+		x=j;
+		j=i;
+		i=x;
+	}
+	count=2;
+	if(j%i==0)
+	{
+		printf("%d与%d的最大公约数为：%d\n",j,i,i);
+	}
+	else while(count<=(i/2+1))
+	{
+		max=1;
+		if(j%count==0&&i%count==0)
+		{
+			max=count;
+		}
+		count++;
+	}
+	if(max>i/2)
+	{
+		printf("%d与%d的最大公约数为1\n",j,i);
+	}
+	if(max>0&&max<=i/2)
+	{
+		printf("%d与%d的最大公约数为%d\n",j,i,max);
+	}
+	return 0;
+}
