@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int i=1;
+	float sum=0;
+	while(i<=100)
+	{
+		float j;
+		j=1.0/i;
+		if(i%2==0)
+		{
+			j=(-1)*j;
+		}
+		sum=sum+j;
+		i++;
+	}
+	printf("结果为%f\n",sum);
+	return 0;
+}
