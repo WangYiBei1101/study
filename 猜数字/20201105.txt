@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+void CaiShuZi()
+{
+	int num=rand()%100+1;
+    int j;
+	printf("输入你想猜的数字：");
+	while(1)
+	{
+		scanf("%d",&j);
+		if(j==num)
+		{
+			printf("猜对了\n");
+			break;
+		}
+		else if(j<num)
+		{
+			printf("猜小了\n");
+		}
+		else
+		{
+			printf("猜大了\n");
+		}
+	}
+}
+int main()
+{
+	int i;
+	srand((unsigned)time(NULL));
+	printf("****************************");
+	printf("****1、玩游戏****2、退出****");
+	printf("****************************");
+	scanf("%d",&i);
+	switch(i)
+	{
+	case 1:
+		CaiShuZi();
+		break;
+	case 2:
+		printf("退出");
+		break;
+	default:
+		printf("退出");
+		break;
+	}
+	return 0;
+}
