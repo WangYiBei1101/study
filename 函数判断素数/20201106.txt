@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+void PrimeNume()
+{
+	int i,j;
+	for(i=100;i<=200;i++)
+	{
+		for(j=2;j<=sqrt(i);j++)
+		{
+			if(i%j==0)
+			{
+				printf("%d不是素数\n",i);
+		     	break;
+			}
+		}
+		if(j>sqrt(i))
+		{
+			printf("%d是素数\n",i);
+		}
+	}
+}
+int main()
+{
+	PrimeNume();
+	return 0;
+}
