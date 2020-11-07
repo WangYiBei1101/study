@@ -1,0 +1,29 @@
+#include<stdio.h>
+int Strlen(char*p)
+{
+	int len=0;
+	do
+	{
+		len++;
+		p=p+1;
+	}while(*p!='\0');
+	return len;
+}
+int Strlen1(char*p)
+{
+	if(*p='\0')
+	{
+		return 0;
+	}
+	return 1+Strlen(p+1);
+}
+int main()
+{
+	int i,j;
+	char arr[]="abcdfrjgnv";
+	i=Strlen(arr);
+	j=Strlen1(arr);
+	printf("%d\n",i);
+	printf("%d\n",j);
+	return 0;
+}
