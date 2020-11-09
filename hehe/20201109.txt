@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	int i=0;
+	char arr[10]={0};
+	while(i<=12)
+	{
+		arr[i]=0;
+		printf("hehe\n");
+		i++;
+	}
+	return 0;
+}
