@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+void paixu(int arr[], int len)
+{
+	int j,n = 0;
+	j = 0;
+	while (j < len - 1)
+	{
+		n = 0;
+		int count;
+		while (n< len - 1 - j)
+		{
+			count = 0;
+			if (arr[n]> arr[n+1])
+			{
+				int tem = arr[n];
+				arr[n] = arr[n+1];
+				arr[n + 1] = tem;
+				count=1;
+			}
+			n++;
+		}
+		j++;
+		if (count == 0)
+		{
+			break;
+		}
+	}
+	printf("%d\n", j);
+}
+int main()
+{
+	int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+	int len = sizeof(arr) / sizeof(arr[0]);
+	int i = 0;
+    paixu(arr, len);
+	while (i < 10)
+	{
+		printf("%d\n", arr[i]);
+		i++;
+	}
+	system("pause");
+	return 0;
+}
