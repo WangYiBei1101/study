@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<windows.h>
+int Co(const void*i, const void*j)
+{
+	if (*((int*)i) > *((int*)j))
+	{
+		return -1;
+	}
+	if (*((int*)i) < *((int*)j))
+	{
+		return 1;
+	}
+	return 0;
+}
+void ExChange(void*i, void*j, int size)
+{
+	for (int x = 0; x < size; x++)
+	{
+		char temp = *((char*)i+x);
+		*((char*)i+x) = *((char*)j+x);
+		*((char*)j+x) = temp;
+	}
+}
+void MyQsort(void *base, int nelem, int width, int(*Comp)(const void *, const void *))
+{
+	for (int j = 0; j < nelem-1; j++)
+	{
+		for (int i = 0; i < nelem-j - 1; i++)
+		{
+			int c = Comp((char*)base + i*width, (char*)base + (i + 1)*width);
+			if (c == -1)
+			{
+				ExChange((char*)base + i*width, (char*)base + (i + 1)*width,width);
+			}
+		}
+	}
+}
+int main()
+{
+	int arr[10] = { 12, 52, 10, 01, 23, 25, 14, 54, 47, 02 };
+	MyQsort(arr, 10, 4,Co);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ",arr[i]);
+	}
+	system("pause");
+	return 0;
+}
